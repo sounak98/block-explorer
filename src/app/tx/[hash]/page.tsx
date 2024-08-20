@@ -26,9 +26,11 @@ export default async function TxPage({
           <span>
             From: <AddressHash hash={tx.from} />
           </span>
-          <span>
-            To: <AddressHash hash={tx.to} />
-          </span>
+          {tx.to && (
+            <span>
+              To: <AddressHash hash={tx.to} />
+            </span>
+          )}
           <span>Amount: {tx.value.toString()} wei</span>
           <span>Gas: {tx.gas.toString()}</span>
           <span>Gas Price: {tx.gasPrice?.toString()} wei</span>
